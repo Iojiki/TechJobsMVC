@@ -32,5 +32,19 @@
 
     <h3>@ViewBag.jobs.Count Result(s)</h3>
 
-    // TODO #2 - Loop over jobs dictionary and display all job fields 
+    // TODO #2 - Loop over jobs dictionary and display all job fields
+    @foreach (Dictionary<string, string> jobs in ViewBag.jobs)
+    {
+        <table class="job-listing">
+            @foreach (KeyValuePair<string, string> jobDisplay in jobs)
+            {
+                <tr>
+                    <td>@jobDisplay.Key</td>
+                    <td>@jobDisplay.Value</td>
+                </tr>
+
+            }
+        </table>
+
+    }
 }
